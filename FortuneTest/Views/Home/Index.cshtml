@@ -1,0 +1,33 @@
+﻿@model IEnumerable<FortuneTest.Models.Forum>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="container py-5">
+
+    <div class="row text-center text-white mb-5">
+        <div class="col-lg-8 mx-auto">
+            <h2 id="brand">Forum Ideas</h2>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-lg-7 mx-auto">
+            @foreach (var item in Model)
+            {
+                <ul class="timeline">
+                    <li class="timeline-item bg-white rounded ml-3 p-4 shadow">
+                        <div class="timeline-arrow"></div>
+                        <h2>@Html.DisplayFor(m => item.Title)</h2>
+                        <h2 class="h5 mb-0">@Html.DisplayFor(m => item.Author)</h2>
+
+                        <span class="small text-gray"><i class="fa fa-clock-o mr-1"></i>@Html.DisplayFor(m => item.InsertDate) </span>
+                        <p>@Html.DisplayFor(m => item.Text)</p>
+                    </li>
+                </ul>
+            }
+            </div>
+    </div>
+</div>
